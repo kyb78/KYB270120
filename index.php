@@ -34,8 +34,17 @@
 	echo $json;
 	echo "<br>";
 	echo "<br>";
-	$messinjer=json_decode($json);
+	$messinjer=json_decode($json,true);
 	var_dump($messinjer);
+	echo '<center>';
+	echo "<br>";
+	echo "<br>";
+	echo '<table border="1"><thead><tr><th>№ запису</th><th>Запис</th></tr></thead><tbody>';
+	foreach ($messinjer as $key=>$value){
+		echo '<tr><td>'.$key.'</td><td>'.$value["text"].'</td></tr>';
+	}
+	echo "</tbody></table>";
+	echo '</center>';
 ?>
 </body>
 </html>
